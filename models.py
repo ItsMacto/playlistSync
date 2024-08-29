@@ -16,6 +16,10 @@ class Playlist:
             return None
         return self.db.cursor.lastrowid
 
+    def get_playlist_by_id(self, playlist_id):
+        query = "SELECT * FROM playlists WHERE id = ?"
+        return self.db.fetchone(query, [playlist_id])
+
     def get_playlist_by_spotify_id(self, spotify_id):
         query = "SELECT * FROM playlists WHERE spotify_id = ?"
         return self.db.fetchone(query, [spotify_id])

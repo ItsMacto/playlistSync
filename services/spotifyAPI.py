@@ -25,7 +25,7 @@ class spotifyAPI:
 
     def get_playlist_items(self, playlist_id: str):
         all_items = []
-        results = self.sp.playlist_items(playlist_id, fields='items(track(name, artists(name), id, external_ids(isrc))), next')
+        results = self.sp.playlist_items(playlist_id, fields='items(track(name, artists(name), album(name), id, external_ids(isrc))), next')
 
         while results:
             all_items.extend(results['items'])

@@ -1,4 +1,4 @@
 .env
 .cache
-.db
+*.db
 __pycache__
